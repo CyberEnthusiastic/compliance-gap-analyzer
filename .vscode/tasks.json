@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compliance: analyze sample (SOC 2)",
+      "type": "shell",
+      "command": "python analyzer.py samples/acme_security_policy.md",
+      "group": { "kind": "test", "isDefault": true }
+    },
+    {
+      "label": "Compliance: analyze sample (ISO 27001)",
+      "type": "shell",
+      "command": "python analyzer.py samples/acme_security_policy.md -f frameworks/iso27001.json",
+      "group": "test"
+    },
+    {
+      "label": "Compliance: open HTML report",
+      "type": "shell",
+      "command": "start reports/gap_report.html",
+      "windows": { "command": "start reports/gap_report.html" },
+      "linux":   { "command": "xdg-open reports/gap_report.html" },
+      "osx":     { "command": "open reports/gap_report.html" }
+    }
+  ]
+}

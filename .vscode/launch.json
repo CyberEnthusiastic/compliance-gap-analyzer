@@ -1,0 +1,45 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Analyze: sample policy vs SOC 2",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/analyzer.py",
+      "args": ["samples/acme_security_policy.md"],
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "Analyze: sample policy vs ISO 27001",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/analyzer.py",
+      "args": ["samples/acme_security_policy.md", "-f", "frameworks/iso27001.json"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Analyze: prompt for policy + framework",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/analyzer.py",
+      "args": ["${input:policyPath}", "-f", "${input:frameworkPath}"],
+      "console": "integratedTerminal"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "policyPath",
+      "type": "promptString",
+      "description": "Path to your policy document (markdown or plain text)",
+      "default": "samples/acme_security_policy.md"
+    },
+    {
+      "id": "frameworkPath",
+      "type": "pickString",
+      "description": "Which compliance framework?",
+      "options": ["frameworks/soc2.json", "frameworks/iso27001.json"],
+      "default": "frameworks/soc2.json"
+    }
+  ]
+}
