@@ -1,0 +1,76 @@
+{
+  "name": "SOC 2 Type II (Trust Services Criteria)",
+  "version": "2017 (revised 2022)",
+  "controls": [
+    {
+      "id": "CC1.1",
+      "category": "Control Environment",
+      "title": "Commitment to integrity and ethical values",
+      "description": "The entity demonstrates a commitment to integrity and ethical values through a code of conduct, ethics training, and a whistleblower channel. Management and the board set the tone at the top and hold individuals accountable for ethical behavior.",
+      "keywords": ["code of conduct", "ethics", "integrity", "whistleblower", "tone at the top", "accountability"]
+    },
+    {
+      "id": "CC2.1",
+      "category": "Communication and Information",
+      "title": "Internal and external communication of security policies",
+      "description": "The entity communicates information security policies, standards, and procedures to personnel and relevant external parties on a regular basis. Training is provided to all employees annually.",
+      "keywords": ["security policy", "communication", "training", "awareness", "annual training", "external parties"]
+    },
+    {
+      "id": "CC5.1",
+      "category": "Control Activities",
+      "title": "Logical access controls",
+      "description": "Access to information assets is restricted through authentication (MFA required), authorization, and role-based access control. Access is reviewed quarterly and deprovisioned within 24 hours of termination.",
+      "keywords": ["access control", "authentication", "MFA", "multi-factor", "role-based", "RBAC", "access review", "deprovisioning"]
+    },
+    {
+      "id": "CC5.2",
+      "category": "Control Activities",
+      "title": "Encryption of data in transit and at rest",
+      "description": "All customer data is encrypted in transit using TLS 1.2 or higher and at rest using AES-256. Encryption keys are managed via a key management system (KMS) with annual rotation.",
+      "keywords": ["encryption", "TLS", "AES", "data at rest", "data in transit", "KMS", "key management", "key rotation"]
+    },
+    {
+      "id": "CC6.1",
+      "category": "Logical and Physical Access",
+      "title": "Vulnerability management and patching",
+      "description": "The entity identifies, prioritizes, and remediates vulnerabilities. Critical vulnerabilities are patched within 15 days, high within 30 days. Quarterly vulnerability scans and annual penetration tests are performed.",
+      "keywords": ["vulnerability management", "patching", "vulnerability scan", "penetration test", "CVSS", "remediation SLA"]
+    },
+    {
+      "id": "CC6.6",
+      "category": "System Operations",
+      "title": "Change management",
+      "description": "All changes to production systems go through a formal change management process including code review, approval from an authorized party, automated testing, and documentation in a ticketing system.",
+      "keywords": ["change management", "code review", "approval", "ticketing", "deployment", "rollback"]
+    },
+    {
+      "id": "CC7.1",
+      "category": "System Operations",
+      "title": "Security monitoring and incident detection",
+      "description": "The entity monitors security events using a SIEM, endpoint detection and response (EDR), and intrusion detection systems (IDS). Alerts are triaged by a 24/7 security operations center (SOC).",
+      "keywords": ["SIEM", "EDR", "IDS", "SOC", "monitoring", "logs", "alerts", "security operations"]
+    },
+    {
+      "id": "CC7.2",
+      "category": "System Operations",
+      "title": "Incident response plan",
+      "description": "A documented incident response plan defines roles, communication procedures, escalation paths, and post-incident review. The plan is tested annually via a tabletop exercise.",
+      "keywords": ["incident response", "IR plan", "tabletop exercise", "escalation", "post-mortem", "breach notification"]
+    },
+    {
+      "id": "CC9.1",
+      "category": "Risk Mitigation",
+      "title": "Vendor and third-party risk management",
+      "description": "Third-party vendors who handle customer data undergo a security review including SOC 2 reports, data processing agreements, and annual reassessment.",
+      "keywords": ["vendor management", "third-party", "DPA", "data processing agreement", "vendor review", "subprocessor"]
+    },
+    {
+      "id": "A1.2",
+      "category": "Availability",
+      "title": "Backup and disaster recovery",
+      "description": "Customer data is backed up daily to a geographically redundant location. A disaster recovery plan with RTO of 4 hours and RPO of 1 hour is tested twice per year.",
+      "keywords": ["backup", "disaster recovery", "DR", "RTO", "RPO", "business continuity", "BCP"]
+    }
+  ]
+}

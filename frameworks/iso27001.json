@@ -1,0 +1,76 @@
+{
+  "name": "ISO/IEC 27001:2022 (selected Annex A controls)",
+  "version": "2022",
+  "controls": [
+    {
+      "id": "A.5.1",
+      "category": "Organizational",
+      "title": "Policies for information security",
+      "description": "Information security policies shall be defined, approved by management, published, and communicated to personnel and relevant interested parties. Policies shall be reviewed at planned intervals or upon significant changes.",
+      "keywords": ["information security policy", "policy review", "management approval", "communication"]
+    },
+    {
+      "id": "A.5.15",
+      "category": "Organizational",
+      "title": "Access control",
+      "description": "Rules to control physical and logical access to information and other associated assets shall be established and implemented based on business and information security requirements.",
+      "keywords": ["access control", "logical access", "physical access", "least privilege"]
+    },
+    {
+      "id": "A.8.5",
+      "category": "Technological",
+      "title": "Secure authentication",
+      "description": "Secure authentication technologies and procedures shall be implemented based on information access restrictions and the specific access control policy. Multi-factor authentication is required for privileged access.",
+      "keywords": ["authentication", "MFA", "multi-factor", "privileged access", "strong authentication"]
+    },
+    {
+      "id": "A.8.7",
+      "category": "Technological",
+      "title": "Protection against malware",
+      "description": "Protection against malware shall be implemented, supported by appropriate user awareness. Endpoint protection (EPP/EDR) shall be deployed to all company-managed endpoints with daily signature updates.",
+      "keywords": ["malware", "antivirus", "EDR", "endpoint protection", "EPP", "signature update"]
+    },
+    {
+      "id": "A.8.8",
+      "category": "Technological",
+      "title": "Management of technical vulnerabilities",
+      "description": "Information about technical vulnerabilities of information systems in use shall be obtained, the organization's exposure evaluated, and appropriate measures taken. A vulnerability management process with remediation SLAs shall be maintained.",
+      "keywords": ["vulnerability management", "patch management", "CVE", "vulnerability scan", "CVSS"]
+    },
+    {
+      "id": "A.8.15",
+      "category": "Technological",
+      "title": "Logging",
+      "description": "Logs that record activities, exceptions, faults, and information security events shall be produced, stored, protected, and analyzed. Logs shall be retained for a minimum of 12 months.",
+      "keywords": ["logging", "log retention", "audit log", "SIEM", "security events"]
+    },
+    {
+      "id": "A.8.16",
+      "category": "Technological",
+      "title": "Monitoring activities",
+      "description": "Networks, systems, and applications shall be monitored for anomalous behavior and appropriate actions taken to evaluate potential information security incidents.",
+      "keywords": ["monitoring", "anomaly detection", "SIEM", "SOC", "incident detection"]
+    },
+    {
+      "id": "A.8.24",
+      "category": "Technological",
+      "title": "Use of cryptography",
+      "description": "Rules for the effective use of cryptography, including cryptographic key management, shall be defined and implemented. AES-256 at rest, TLS 1.2+ in transit.",
+      "keywords": ["cryptography", "encryption", "TLS", "AES", "key management", "cryptographic controls"]
+    },
+    {
+      "id": "A.5.30",
+      "category": "Organizational",
+      "title": "ICT readiness for business continuity",
+      "description": "ICT readiness shall be planned, implemented, maintained, and tested based on business continuity objectives and ICT continuity requirements. Includes backups, disaster recovery, and RTO/RPO targets.",
+      "keywords": ["business continuity", "BCP", "disaster recovery", "DR", "RTO", "RPO", "backup"]
+    },
+    {
+      "id": "A.6.8",
+      "category": "People",
+      "title": "Information security event reporting",
+      "description": "The organization shall provide a mechanism for personnel to report observed or suspected information security events through appropriate channels in a timely manner.",
+      "keywords": ["incident reporting", "security event", "whistleblower", "report", "incident channel"]
+    }
+  ]
+}
