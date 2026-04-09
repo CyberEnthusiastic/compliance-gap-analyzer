@@ -1,0 +1,52 @@
+name: Compliance Drift Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        framework:
+          - { name: SOC2, path: frameworks/soc2.json }
+          - { name: ISO27001, path: frameworks/iso27001.json }
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Analyze sample policy against ${{ matrix.framework.name }}
+        run: |
+          python analyzer.py samples/acme_security_policy.md \
+            -f ${{ matrix.framework.path }} \
+            -o reports/${{ matrix.framework.name }}_report.json \
+            --html reports/${{ matrix.framework.name }}_report.html
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: compliance-${{ matrix.framework.name }}
+          path: reports/
+
+      - name: Show compliance summary
+        run: |
+          python -c "
+          import json
+          r = json.load(open('reports/${{ matrix.framework.name }}_report.json'))
+          s = r['summary']
+          print(f\"Framework        : {s['framework']}\")
+          print(f\"Total controls   : {s['total_controls']}\")
+          print(f\"Covered          : {s['covered']}\")
+          print(f\"Partial          : {s['partial']}\")
+          print(f\"Missing          : {s['missing']}\")
+          print(f\"Compliance score : {s['compliance_percent']}%\")
+          "
