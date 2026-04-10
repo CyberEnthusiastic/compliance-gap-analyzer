@@ -185,6 +185,9 @@ class ComplianceAnalyzer:
 
 
 def main():
+    from license_guard import verify_license, print_banner
+    verify_license()
+    print_banner("Compliance Gap Analyzer")
     import sys
     try:
         sys.stdout.reconfigure(encoding="utf-8")
