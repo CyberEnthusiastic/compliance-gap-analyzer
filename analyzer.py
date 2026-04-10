@@ -26,7 +26,7 @@ import argparse
 from collections import Counter
 from dataclasses import dataclass, asdict, field
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import List, Dict
 
 
@@ -180,7 +180,7 @@ class ComplianceAnalyzer:
             "missing": missing,
             "avg_coverage": round(avg_coverage, 1),
             "compliance_percent": round((covered + partial * 0.5) / total * 100, 1) if total else 0,
-            "generated_at": datetime.utcnow().isoformat() + "Z",
+            "generated_at": datetime.now(tz=timezone.utc).isoformat(),
         }
 
 
