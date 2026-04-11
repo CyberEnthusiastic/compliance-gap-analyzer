@@ -16,7 +16,7 @@ For each control, outputs:
 
 No external APIs, no vector DB - runs entirely locally in pure stdlib + regex.
 
-Author: Adithya Vasamsetti (CyberEnthusiastic)
+Author: Mohith Vasamsetti (CyberEnthusiastic)
 """
 import re
 import os
