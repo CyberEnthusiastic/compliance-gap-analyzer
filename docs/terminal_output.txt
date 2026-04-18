@@ -1,0 +1,50 @@
+
+  Compliance Gap Analyzer v1.0
+  Copyright (c) 2026 Mohith Vasamsetti
+  https://github.com/CyberEnthusiastic
+  Licensed for personal use only. See LICENSE for terms.
+
+============================================================
+  [Compliance Gap Analyzer v1.0]
+============================================================
+  Policy    : samples/acme_security_policy.md
+  Framework : SOC 2 Type II (Trust Services Criteria)
+  Controls  : 10
+  Covered   : 2
+  Partial   : 7
+  Missing   : 1
+  Compliance: 55.0%
+============================================================
+[XX] CC1.1    Commitment to integrity and ethical values  (7.7%)
+   ! Negation detected in policy text
+   missing: code of conduct, integrity, tone at the top, accountability
+
+[--] CC6.1    Vulnerability management and patching  (30.4%)
+   missing: patching, penetration test, cvss, remediation sla
+
+[--] CC7.2    Incident response plan  (42.1%)
+   missing: ir plan, escalation, post-mortem
+
+[--] CC2.1    Internal and external communication of security policies  (56.0%)
+   missing: annual training, external parties
+
+[--] A1.2     Backup and disaster recovery  (57.7%)
+   missing: business continuity, bcp
+
+[--] CC5.2    Encryption of data in transit and at rest  (62.4%)
+   missing: key management, key rotation
+
+[--] CC6.6    Change management  (67.3%)
+   missing: ticketing
+
+[--] CC9.1    Vendor and third-party risk management  (68.0%)
+   missing: vendor review
+
+[OK] CC5.1    Logical access controls  (70.8%)
+   missing: deprovisioning
+
+[OK] CC7.1    Security monitoring and incident detection  (70.8%)
+   missing: logs
+
+[+] JSON report: reports/gap_report.json
+[+] HTML report: reports/gap_report.html
